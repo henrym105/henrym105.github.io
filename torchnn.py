@@ -37,11 +37,6 @@ class ImageClassifier(nn.Module):
     def forward(self, x):
         return self.model(x)
 
-# instance of the neural network, loss, optimizer
-clf = ImageClassifier().to('cpu')
-opt = Adam(clf.parameters(), lr=1e-3)
-loss_fn = nn.CrossEntropyLoss()
-
 def train_nn():
     # local cpu training ~ 15 minutes
     print("\n\nBeginning the training process...")
@@ -65,6 +60,11 @@ def train_nn():
 
 # training function
 if __name__ == "__main__":
+    # create instance of the neural network, loss, optimizer
+    clf = ImageClassifier().to('cpu')
+    opt = Adam(clf.parameters(), lr=1e-3)
+    loss_fn = nn.CrossEntropyLoss()
+
     # train the model if the state doesn't exist:
     if not(os.path.exists('model_state.pt')):
         train_nn()
