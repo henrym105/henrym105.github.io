@@ -5,20 +5,35 @@ import sys
 import time
 import streamlit as st
 from PIL import Image
-# from torchvision.transforms import ToTensor
-try:
-    # replace "yourpackage" with the package you want to import
-    from torchvision.transforms import ToTensor
-# This block executes only on the first run when your package isn't installed
-except ModuleNotFoundError as e:
-  subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
-  # wait for subprocess to install package before running your actual code below
-  time.sleep(90)
-
-from streamlit_drawable_canvas import st_canvas
-import torch
 from torchnn import ImageClassifier  # Import your neural network class
 
+# from torchvision.transforms import ToTensor
+try:
+    from torchvision.transforms import ToTensor
+except ModuleNotFoundError as e:
+    subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
+    # wait for subprocess to install package before running your actual code below
+    from torchvision.transforms import ToTensor
+
+# from streamlit_drawable_canvas import st_canvas
+try:
+    from streamlit_drawable_canvas import st_canvas
+except ModuleNotFoundError as e:
+    subprocess.Popen([f'{sys.executable} -m pip install streamlit_drawable_canvas'], shell=True)
+    from streamlit_drawable_canvas import st_canvas
+
+    # wait for subprocess to install package before running your actual code below
+    time.sleep(90)
+
+# import torch
+try:
+    import torch
+except ModuleNotFoundError as e:
+    subprocess.Popen([f'{sys.executable} -m pip install torch'], shell=True)
+    import torch
+
+    # wait for subprocess to install package before running your actual code below
+    time.sleep(90)
 
 
 
