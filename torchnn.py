@@ -27,11 +27,6 @@ import torch
 from PIL import Image
 import os, sys
 
-# import dataset
-train = datasets.MNIST(root = "data", download=True, train=True, transform=ToTensor())
-dataset = DataLoader(dataset=train, batch_size=32)
-# 10 classes, one for each digit 0 through 9
-
 
 # image classifier neural network
 class ImageClassifier(nn.Module):
@@ -53,6 +48,11 @@ class ImageClassifier(nn.Module):
         return self.model(x)
 
 def train_nn():
+    # import dataset
+    train = datasets.MNIST(root = "data", download=True, train=True, transform=ToTensor())
+    dataset = DataLoader(dataset=train, batch_size=32)
+    # 10 classes, one for each digit 0 through 9
+
     # local cpu training ~ 15 minutes
     print("\n\nBeginning the training process...")
     for epoch in range(10):
