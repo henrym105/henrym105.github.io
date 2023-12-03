@@ -2,10 +2,10 @@
 
 import streamlit as st
 from PIL import Image
-# from torchvision.transforms import ToTensor
+from torchvision.transforms import ToTensor
 from streamlit_drawable_canvas import st_canvas
-# import torch
-# from torchnn import ImageClassifier  # Import your neural network class
+import torch
+from torchnn import ImageClassifier  # Import your neural network class
 
 # Load the trained model
 model = ImageClassifier()
