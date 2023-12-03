@@ -56,6 +56,9 @@ if st.button('Predict number drawn'):
         img = process_image(canvas_result.image_data)
         # Predict the number
         predicted_number = predict_number(img)
-        st.write(f'Predicted number: {predicted_number}')
+        # st.write(f'Predicted number: {predicted_number}')
+        st.write(f"## **Prediction:** {predicted_number}")
+        # st.write(f"## {predicted_number}")
+
     else:
         st.write('Please draw a digit to predict.')
