@@ -1,5 +1,8 @@
 # To run, use command: "streamlit run app.py"
 
+import subprocess
+import sys
+import time
 import streamlit as st
 from PIL import Image
 # from torchvision.transforms import ToTensor
@@ -11,14 +14,11 @@ except ModuleNotFoundError as e:
   subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
   # wait for subprocess to install package before running your actual code below
   time.sleep(90)
-  
+
 from streamlit_drawable_canvas import st_canvas
 import torch
 from torchnn import ImageClassifier  # Import your neural network class
 
-import subprocess
-import sys
-import time
 
 
 
