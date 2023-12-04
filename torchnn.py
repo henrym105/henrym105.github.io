@@ -1,8 +1,5 @@
 # pytorch neural networks
 
-import subprocess
-import time
-import sys
 from torch import nn, save, load
 # optimizer
 from torch.optim import Adam
