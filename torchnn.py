@@ -1,25 +1,36 @@
 # pytorch neural networks
 
-try:
-    import subprocess
-    import time
-    import sys
-    from torch import nn, save, load
-    # optimizer
-    from torch.optim import Adam
-    # to load datsets
-    from torch.utils.data import DataLoader
-    from torchvision import datasets
-    from torchvision.transforms import ToTensor, Compose
-except ModuleNotFoundError as e:
-    subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
-    subprocess.Popen([f'{sys.executable} -m pip install torch'], shell=True)
-    from torchvision import datasets
-    from torchvision.transforms import ToTensor, Compose
-    from torch import nn, save, load
-    from torch.optim import Adam
-    from torch.utils.data import DataLoader    
-    time.sleep(90)
+import subprocess
+import time
+import sys
+from torch import nn, save, load
+# optimizer
+from torch.optim import Adam
+# to load datsets
+from torch.utils.data import DataLoader
+from torchvision import datasets
+from torchvision.transforms import ToTensor, Compose
+
+# try:
+#     import subprocess
+#     import time
+#     import sys
+#     from torch import nn, save, load
+#     # optimizer
+#     from torch.optim import Adam
+#     # to load datsets
+#     from torch.utils.data import DataLoader
+#     from torchvision import datasets
+#     from torchvision.transforms import ToTensor, Compose
+# except ModuleNotFoundError as e:
+#     subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
+#     subprocess.Popen([f'{sys.executable} -m pip install torch'], shell=True)
+#     from torchvision import datasets
+#     from torchvision.transforms import ToTensor, Compose
+#     from torch import nn, save, load
+#     from torch.optim import Adam
+#     from torch.utils.data import DataLoader    
+#     time.sleep(90)
 
 
 # Used to load model after initial training
@@ -97,9 +108,6 @@ if __name__ == "__main__":
     img = img.convert(mode='L')
     # resize the image to the appropriate size (based on the MNIST training set)
     img = img.resize((28, 28))
-
-    # img = Image.open('img_9.jpg')
-    # transform = Compose([ToTensor(),])
 
     img_tensor = ToTensor()(img).unsqueeze(0).to('cpu')
 

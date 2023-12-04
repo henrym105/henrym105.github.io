@@ -1,44 +1,20 @@
 # To run, use command: "streamlit run app.py"
 
+import torch
 import streamlit as st
 from PIL import Image
-from torchnn import ImageClassifier  # Import your neural network class
-
 from torchvision.transforms import ToTensor
-import torch
 from streamlit_drawable_canvas import st_canvas
-
-## if imports fail, can uncomment this code to pip install it on streamlit servers
-# import subprocess
-# import sys
-# import time
-# try: 
-#     from torchvision.transforms import ToTensor
-# except ModuleNotFoundError as e:
-#     subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
-#     from torchvision.transforms import ToTensor
-
-# try:
-#     import torch
-# except ModuleNotFoundError as e:
-#     subprocess.Popen([f'{sys.executable} -m pip install torch'], shell=True)
-#     import torch
-#     time.sleep(90)
-
-# try:
-#     from streamlit_drawable_canvas import st_canvas
-# except ModuleNotFoundError as e:
-#     subprocess.Popen([f'{sys.executable} -m pip install streamlit_drawable_canvas'], shell=True)
-#     from streamlit_drawable_canvas import st_canvas
-#     time.sleep(90)
-
+from torchnn import ImageClassifier  # my custom neural network class
 
 # Load the trained model
 model = ImageClassifier()
 model.load_state_dict(torch.load('model_state.pt', map_location=torch.device('cpu')))
 model.eval()
 
+# create a title
 st.title('Number Predictor')
+st.write('Use your cursor to draw a digit (0-9), then click predict button.')
 
 # Create a canvas for drawing
 canvas_result = st_canvas(
