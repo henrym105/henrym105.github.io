@@ -4,6 +4,7 @@
 Use this streamlit app to draw a number with your mouse / finger. 
 Click redict and the neural network will predict which number is drawn!
 - built with pytorch & torchvision
+- works on Mobile and Desktop browsers
 
 [![Click to launch Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://numberdraw.streamlit.app)
 
