@@ -1,35 +1,36 @@
 # To run, use command: "streamlit run app.py"
 
-import subprocess
-import sys
-import time
 import streamlit as st
 from PIL import Image
 from torchnn import ImageClassifier  # Import your neural network class
 
-# from torchvision.transforms import ToTensor
-# import torch
-# from streamlit_drawable_canvas import st_canvas
+from torchvision.transforms import ToTensor
+import torch
+from streamlit_drawable_canvas import st_canvas
 
-try: 
-    from torchvision.transforms import ToTensor
-except ModuleNotFoundError as e:
-    subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
-    from torchvision.transforms import ToTensor
+## if imports fail, can uncomment this code to pip install it on streamlit servers
+# import subprocess
+# import sys
+# import time
+# try: 
+#     from torchvision.transforms import ToTensor
+# except ModuleNotFoundError as e:
+#     subprocess.Popen([f'{sys.executable} -m pip install torchvision'], shell=True)
+#     from torchvision.transforms import ToTensor
 
-try:
-    import torch
-except ModuleNotFoundError as e:
-    subprocess.Popen([f'{sys.executable} -m pip install torch'], shell=True)
-    import torch
-    time.sleep(90)
+# try:
+#     import torch
+# except ModuleNotFoundError as e:
+#     subprocess.Popen([f'{sys.executable} -m pip install torch'], shell=True)
+#     import torch
+#     time.sleep(90)
 
-try:
-    from streamlit_drawable_canvas import st_canvas
-except ModuleNotFoundError as e:
-    subprocess.Popen([f'{sys.executable} -m pip install streamlit_drawable_canvas'], shell=True)
-    from streamlit_drawable_canvas import st_canvas
-    time.sleep(90)
+# try:
+#     from streamlit_drawable_canvas import st_canvas
+# except ModuleNotFoundError as e:
+#     subprocess.Popen([f'{sys.executable} -m pip install streamlit_drawable_canvas'], shell=True)
+#     from streamlit_drawable_canvas import st_canvas
+#     time.sleep(90)
 
 
 # Load the trained model
