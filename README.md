@@ -30,7 +30,12 @@ Use this interactive Streamlit app to draw a number with your mouse or finger. A
 
 ### Demo
 
-[![Click to Launch Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://numberdraw.streamlit.app)
+<!-- [![Click to Launch Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://numberdraw.streamlit.app) -->
+<h3>
+  <a href="https://numberdraw.streamlit.app">
+    <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Click to Launch Streamlit App">
+  </a>
+</h3>
 
 <img src="./data/IMG_3380.gif" width="300">
 
