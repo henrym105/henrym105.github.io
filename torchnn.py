@@ -40,8 +40,7 @@ class ImageClassifier(nn.Module):
             nn.Conv2d(in_channels = 64, out_channels = 64, kernel_size = (3,3)),
             nn.ReLU(),
             nn.Flatten(),
-            nn.Linear(in_features = 64*(28-6)*(28-6), 
-                      out_features =  10)
+            nn.Linear(in_features = 64*(28-6)*(28-6), out_features =  10)
         )    
 
     def forward(self, x):
@@ -50,8 +49,7 @@ class ImageClassifier(nn.Module):
 def train_nn():
     # import dataset
     train = datasets.MNIST(root = "data", download=True, train=True, transform=ToTensor())
-    dataset = DataLoader(dataset=train, batch_size=32)
-    # 10 classes, one for each digit 0 through 9
+    dataset = DataLoader(dataset=train, batch_size=32) # 10 classes, one for each digit 0 through 9
 
     # local cpu training ~ 15 minutes
     print("\n\nBeginning the training process...")

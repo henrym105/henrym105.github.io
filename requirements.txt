@@ -1,6 +1,5 @@
 Pillow==10.1.0
-Pillow==10.1.0
 streamlit==1.29.0
 streamlit_drawable_canvas==0.9.3
-torch==2.1.0.post100
+torch==1.6.0
 torchvision==0.16.1
