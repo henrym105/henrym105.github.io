@@ -15,7 +15,7 @@ model.eval()
 # create a title
 st.title('Number Predictor')
 st.write('Use your cursor to draw a digit (0-9), then click predict button.')
-st.write('\nnote, for best resutls draw the number as large as possible.')
+# st.write('\nnote, for best results draw the number as large as possible.')
 
 # Create a canvas for drawing
 canvas_result = st_canvas(
@@ -28,6 +28,10 @@ canvas_result = st_canvas(
     drawing_mode='freedraw',
     key='canvas'
 )
+
+# add note for below the canvas
+st.caption('NOTE:, for best results draw the number as large as possible.')
+
 
 def process_image(image_data):
     """
