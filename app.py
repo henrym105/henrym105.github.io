@@ -30,7 +30,7 @@ canvas_result = st_canvas(
 )
 
 # add note for below the canvas
-st.caption('NOTE:, for best results draw the number as large as possible.')
+st.caption('NOTE: for best results draw the number as large as possible.')
 
 
 def process_image(image_data):
