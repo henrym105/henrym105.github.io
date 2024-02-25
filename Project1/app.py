@@ -6,10 +6,13 @@ from PIL import Image
 from torchvision.transforms import ToTensor
 from streamlit_drawable_canvas import st_canvas
 from torchnn import ImageClassifier  # my custom neural network class
+import os
+
+HOME = os.getcwd()
 
 # Load the trained model
 model = ImageClassifier()
-model.load_state_dict(torch.load('model_state.pt', map_location=torch.device('cpu')))
+model.load_state_dict(torch.load(f'{HOME}/model_state.pt', map_location=torch.device('cpu')))
 model.eval()
 
 # create a title
