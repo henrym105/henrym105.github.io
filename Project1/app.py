@@ -9,10 +9,15 @@ from torchnn import ImageClassifier  # my custom neural network class
 import os
 
 HOME = os.getcwd()
+if 'Project1' in HOME:
+    model_state_path = f'{HOME}/model_state.pt'
+else:
+    model_state_path = f'{HOME}/Project1/model_state.pt'
+
 
 # Load the trained model
 model = ImageClassifier()
-model.load_state_dict(torch.load(f'{HOME}/model_state.pt', map_location=torch.device('cpu')))
+model.load_state_dict(torch.load(model_state_path, map_location=torch.device('cpu')))
 model.eval()
 
 # create a title
