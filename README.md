@@ -37,7 +37,7 @@ Use this interactive Streamlit app to draw a number with your mouse or finger. A
   </a>
 </h3>
 
-<img src="./data/IMG_3380.gif" width="300">
+<img src="./Project1/data/IMG_3380.gif" width="300">
 
 ---
 
