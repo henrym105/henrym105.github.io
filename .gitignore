@@ -1,6 +1,5 @@
-# dont upload the MNIST and EMNIST data
-data/MNIST*
-data/EMNIST*
+# Ignore the data folder
+data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
